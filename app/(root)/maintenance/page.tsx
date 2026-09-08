@@ -153,8 +153,8 @@ export default function MaintenancePage() {
         <div className="grid gap-4 sm:grid-cols-2">
           <Card>
             <CardContent className="flex items-center gap-4 p-6">
-              <div className="rounded-lg bg-primary/10 p-3">
-                <FileText className="h-6 w-6  text-amber-900" />
+              <div className="rounded-lg bg-primary p-3">
+                <FileText className="h-6 w-6  text-primary-foreground" />
               </div>
 
               <div className="flex-1">
@@ -174,8 +174,8 @@ export default function MaintenancePage() {
 
           <Card>
             <CardContent className="flex items-center gap-4 p-6">
-              <div className="rounded-lg bg-primary/10 p-3">
-                <Palette className="h-6 w-6   text-amber-900" />
+              <div className="rounded-lg bg-primary p-3">
+                <Palette className="h-6 w-6   text-primary-foreground" />
               </div>
 
               <div className="flex-1">
@@ -224,8 +224,8 @@ export default function MaintenancePage() {
                 >
                   <CardHeader>
                     <div className="flex items-center gap-4">
-                      <div className="rounded-lg bg-primary/10 p-3">
-                        <Icon className="h-5 w-5 text-amber-900" />
+                      <div className="rounded-lg bg-primary p-3">
+                        <Icon className="h-6 w-6 text-primary-foreground" />
                       </div>
 
                       <CardTitle className="text-xl">{item.title}</CardTitle>

@@ -1,105 +1,61 @@
 import { getCommittees } from "@/lib/acttions/getCommittees";
-import Image from "next/image";
-import archLogo from "@/assets/images/brownicons/arch.png";
-import poolLogo from "@/assets/images/brownicons/pool.png";
-import roofLogo from "@/assets/images/brownicons/roof.png";
-import groundsLogo from "@/assets/images/brownicons/landscape.png";
-import hospitalityLogo from "@/assets/images/brownicons/hospitality.png";
-
-const committeeImages = {
-  arch: archLogo,
-  pool: poolLogo,
-  hospitality: hospitalityLogo,
-  grounds: groundsLogo,
-  roof: roofLogo,
+import { Building2, Waves, HandHeart, Trees, Home } from "lucide-react";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+const committeeIcons = {
+  arch: Building2,
+  pool: Waves,
+  hospitality: HandHeart,
+  grounds: Trees,
+  roof: Home,
 } as const;
-
 export default async function Committees() {
   const committees = await getCommittees();
-
   return (
-    <div>
-      <section id="officers" className="py-20">
-        <div className="mx-auto max-w-md px-6">
-          {committees.map((committee) => (
-            <div key={committee.id} className="mb-10">
-              <div className="mb-4 flex flex-col items-center">
-                {committee.image &&
-                  committeeImages[
-                    committee.image as keyof typeof committeeImages
-                  ] && (
-                    <Image
-                      src={
-                        committeeImages[
-                          committee.image as keyof typeof committeeImages
-                        ]
-                      }
-                      alt={committee.name}
-                      width={100}
-                      height={60}
-                      className="h-20 w-auto"
-                    />
-                  )}
-
-                <h2 className="text-2xl font-normal">{committee.name}</h2>
-              </div>
-
-              <table className="hoa-table">
-                <tbody>
-                  {committee.members.map((name, index) => (
-                    <tr
-                      key={`${committee.id}-${index}`}
-                      className={
-                        index % 2 === 0 ? "bg-background" : "bg-muted/30"
-                      }
-                    >
-                      <td className="px-4 py-3 text-center">{name}</td>
-                    </tr>
-                  ))}
-                </tbody>
-              </table>
-            </div>
-          ))}
+    <section id="committees" className="bg-muted/30">
+      <div className="mx-auto max-w-6xl px-4 py-14 sm:px-6 lg:px-8">
+        <div className="grid gap-5 md:grid-cols-2">
+          {committees.map((committee) => {
+            const Icon =
+              committeeIcons[committee.image as keyof typeof committeeIcons] ??
+              Building2;
+            return (
+              <Card
+                key={committee.id}
+                className="h-full overflow-hidden transition-shadow hover:shadow-md"
+              >
+                <CardHeader className="border-b bg-background">
+                  <div className="flex items-center gap-4">
+                    <div className="rounded-lg bg-primary p-3">
+                      <Icon className="h-6 w-6 text-primary-foreground" />
+                    </div>
+                    <CardTitle className="text-xl tracking-tight sm:text-2xl">
+                      {committee.name}
+                    </CardTitle>
+                  </div>
+                </CardHeader>
+                <CardContent className="p-0">
+                  <ul className="divide-y">
+                    {committee.members.map((name, index) => (
+                      <li
+                        key={`${committee.id}-${index}`}
+                        className={
+                          index % 2 === 0
+                            ? "bg-background px-6 py-3"
+                            : "bg-muted/30 px-6 py-3"
+                        }
+                      >
+                        <span className="text-base text-foreground">
+                          {name}
+                        </span>
+                      </li>
+                    ))}
+                  </ul>
+                </CardContent>
+              </Card>
+            );
+          })}
         </div>
-      </section>
-    </div>
+      </div>
+    </section>
   );
-}
-
-{
-  /* <div className="flex justify-center mb-3">
-  <Image src={archLogo} alt="" height={75} width={100} />
-</div>; */
-}
-{
-  /* Heading */
-}
-{
-  /* <h2 className="mb-8 text-center text-3xl font-semi-bold text-foreground">
-  Architectural Control
-</h2>; */
-}
-
-{
-  /* Board Members */
-}
-{
-  /* <div className="mx-auto w-full max-w-md">
-  <table className="hoa-table">
-    <tbody>
-      {committees
-        .filter((member) => member.name === "Architectural Control")
-        .flatMap((member) =>
-          member.members.map((name, index) => (
-            <tr
-              key={`${member.id}-${index}`}
-              className={index % 2 === 0 ? "bg-background" : "bg-muted/30"}
-            >
-              <td className="px-4 py-3">{name}</td>
-            </tr>
-          )),
-        )}
-    </tbody>
-  </table>
-</div>; */
 }

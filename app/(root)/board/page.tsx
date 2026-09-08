@@ -2,38 +2,77 @@ import Board from "@/components/boardpage/board";
 import Committees from "@/components/boardpage/committees";
 import Officers from "@/components/boardpage/officers";
 import { getMeeting } from "@/lib/acttions/getMeeting";
-// const dayOfWeek = "Thursday";
-// const weekOfMonth = "2";
-// const time = "5:30 P.M";
-// const location = "Park West Church";
 
 export default async function BoardPage() {
   const meeting = await getMeeting();
 
+  const currentMeeting = meeting[0];
+
   return (
-    <div className="space-y-2">
-      <div className="grid  w-full items-center text-gray-800 pt-10">
-        <h2 className="mb-4 text-center text-3xl font-semi-bold text-foreground">
-          HOA BOARD & OFFICERS
-        </h2>
-        <h2 className="mb-4 text-center text-2xl font-semi-bold text-foreground">
-          Officers and Committee Members
-        </h2>
-        <p className="mt-4  text-lg text-gray-600 sm:text-xl">
-          The Board meets the {meeting[0].weekOfMonth}nd {meeting[0].dayOfWeek}{" "}
-          of every month at {meeting[0].time} at the Park {meeting[0].location}.
-          ​Residents are encouraged to attend board meetings. The Homeowners
-          Association board of directors is composed of nine members who are
-          elected at the annual meeting of the Association held in June each
-          year. deerfieldhomeownersassociation@gmail.com
-        </p>
-      </div>
+    <main className="min-h-screen bg-background">
+      {/* Page Header */}
+      <section className="border-b bg-muted/30">
+        <div className="mx-auto max-w-6xl px-4 py-16 sm:px-6 lg:px-8">
+          <div className="mx-auto max-w-3xl text-center">
+            <p className="mb-3 text-sm font-semibold uppercase tracking-widest text-primary">
+              Deerfield Home Owners Association
+            </p>
+
+            <h1 className="text-4xl font-bold tracking-tight sm:text-5xl">
+              HOA Board & Officers
+            </h1>
+
+            <p className="mx-auto mt-5 max-w-2xl text-lg leading-8 text-muted-foreground">
+              The Deerfield Homeowners Association is governed by a nine-member
+              Board of Directors elected at the annual meeting held each June.
+              Residents are encouraged to attend board meetings.
+            </p>
+
+            {currentMeeting && (
+              <div className="mx-auto mt-8 max-w-2xl rounded-lg border bg-background p-5 text-left">
+                <p className="text-sm font-semibold uppercase tracking-wide text-primary">
+                  Board Meeting
+                </p>
+
+                <p className="mt-2 text-base leading-7 text-muted-foreground">
+                  The Board meets the{" "}
+                  <span className="font-medium text-foreground">
+                    {currentMeeting.weekOfMonth}
+                  </span>{" "}
+                  {currentMeeting.dayOfWeek} of every month at{" "}
+                  <span className="font-medium text-foreground">
+                    {currentMeeting.time}
+                  </span>{" "}
+                  at Park {currentMeeting.location}.
+                </p>
+              </div>
+            )}
+          </div>
+        </div>
+      </section>
+
+      {/* Board */}
       <Board />
+
+      {/* Officers */}
       <Officers />
-      <h2 className="mb-4 text-center text-xl font-semi-bold text-foreground">
-        Committees
-      </h2>
+
+      {/* Committees */}
+      <section className="border-t bg-muted/30">
+        <div className="mx-auto max-w-6xl px-4 pt-14 sm:px-6 lg:px-8">
+          <div className="text-center">
+            <p className="text-sm font-semibold uppercase tracking-widest text-primary">
+              Deerfield HOA
+            </p>
+
+            <h2 className="mt-2 text-3xl font-bold tracking-tight sm:text-4xl">
+              Committees
+            </h2>
+          </div>
+        </div>
+      </section>
+
       <Committees />
-    </div>
+    </main>
   );
 }

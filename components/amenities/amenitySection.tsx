@@ -1,44 +1,44 @@
-import Image, { StaticImageData } from "next/image";
-
+import { LucideIcon } from "lucide-react";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 type AmenitySectionProps = {
   title: string;
-  icon: StaticImageData;
+  icon: LucideIcon;
   items: React.ReactNode[];
 };
-
 export default function AmenitySection({
   title,
-  icon,
+  icon: Icon,
   items,
 }: AmenitySectionProps) {
   return (
-    <section className="w-full py-8 sm:py-10">
-      <div className="mx-auto w-full max-w-4xl px-4 sm:px-6">
-        {/* Icon */}
-        <div className="mb-4 flex justify-center">
-          <Image
-            src={icon}
-            alt={title}
-            width={100}
-            height={100}
-            className="h-20 w-auto object-contain sm:h-24"
-          />
-        </div>
+    <section className="w-full h-full py-6 sm:py-8">
+      <div className="mx-auto w-full max-w-5xl px-4 sm:px-6 lg:px-8 h-full">
+        <Card className="h-full overflow-hidden transition-shadow hover:shadow-md">
+          {/* Header */}
+          <CardHeader className="border-b bg-muted/30">
+            <div className="flex items-center gap-4">
+              <div className="rounded-lg bg-primary p-3">
+                <Icon className="h-6 w-6 text-primary-foreground" />
+              </div>
 
-        {/* Title */}
-        <h2 className="mb-6 text-center text-2xl font-normal text-gray-700">
-          {title}
-        </h2>
+              <CardTitle className="text-2xl font-semibold tracking-tight sm:text-3xl">
+                {title}
+              </CardTitle>
+            </div>
+          </CardHeader>
 
-        {/* Content */}
-        <ul className="mx-auto max-w-3xl space-y-4 text-base leading-7 text-gray-700">
-          {items.map((item, index) => (
-            <li key={index} className="flex items-start gap-3">
-              <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-gray-700" />
-              <span className="min-w-0">{item}</span>
-            </li>
-          ))}
-        </ul>
+          {/* Content */}
+          <CardContent className="p-6 sm:p-8">
+            <ul className="mx-auto max-w-3xl space-y-4 text-base leading-7 text-muted-foreground">
+              {items.map((item, index) => (
+                <li key={index} className="flex items-start gap-3">
+                  <span className="mt-3 h-1.5 w-1.5 shrink-0 rounded-full bg-primary" />
+                  <span className="min-w-0">{item}</span>
+                </li>
+              ))}
+            </ul>
+          </CardContent>
+        </Card>
       </div>
     </section>
   );
