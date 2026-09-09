@@ -87,10 +87,10 @@ export type PoolLiaison = Prisma.PoolLiaisonModel
  */
 export type Hoa = Prisma.HoaModel
 /**
- * Model MaintenanceCompany
+ * Model Management
  * 
  */
-export type MaintenanceCompany = Prisma.MaintenanceCompanyModel
+export type Management = Prisma.ManagementModel
 /**
  * Model Testimonial
  * 

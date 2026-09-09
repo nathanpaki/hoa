@@ -7,4 +7,7 @@ export const SERVER_URL =
 
 export const firstHalfName = "Deerfield";
 export const secondHalfName = "Homeowners Association";
+export const fullHoaName = "Deerfield Homeowners Association";
+export const streetName = "1806 Elmhurst Way";
+export const cityState = "Knoxville, TN 37932";
 export const tagline = "Together in Harmony, Thriving as One Community.";

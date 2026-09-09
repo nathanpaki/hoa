@@ -60,7 +60,7 @@ export const ModelName = {
   Committee: 'Committee',
   PoolLiaison: 'PoolLiaison',
   Hoa: 'Hoa',
-  MaintenanceCompany: 'MaintenanceCompany',
+  Management: 'Management',
   Testimonial: 'Testimonial',
   Resources: 'Resources'
 } as const
@@ -199,7 +199,7 @@ export const HoaScalarFieldEnum = {
 export type HoaScalarFieldEnum = (typeof HoaScalarFieldEnum)[keyof typeof HoaScalarFieldEnum]
 
 
-export const MaintenanceCompanyScalarFieldEnum = {
+export const ManagementScalarFieldEnum = {
   id: 'id',
   name: 'name',
   street: 'street',
@@ -212,7 +212,7 @@ export const MaintenanceCompanyScalarFieldEnum = {
   updatedAt: 'updatedAt'
 } as const
 
-export type MaintenanceCompanyScalarFieldEnum = (typeof MaintenanceCompanyScalarFieldEnum)[keyof typeof MaintenanceCompanyScalarFieldEnum]
+export type ManagementScalarFieldEnum = (typeof ManagementScalarFieldEnum)[keyof typeof ManagementScalarFieldEnum]
 
 
 export const TestimonialScalarFieldEnum = {

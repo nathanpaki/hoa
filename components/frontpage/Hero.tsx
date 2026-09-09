@@ -33,10 +33,10 @@ export default function Hero() {
                 Tennessee.
               </p>
 
-              <Button className="mt-6" size="lg">
+              {/* <Button className="mt-6" size="lg">
                 Learn More
                 <ArrowRight className="ml-2 h-4 w-4" />
-              </Button>
+              </Button> */}
             </div>
           </div>
         </div>

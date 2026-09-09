@@ -10,6 +10,7 @@ import {
   Waves,
 } from "lucide-react";
 
+import { fullHoaName } from "@/lib/constants";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 
 const communityFeatures = [
@@ -54,17 +55,13 @@ const communityFeatures = [
 export default function AboutPage() {
   return (
     <main className="min-h-screen bg-background">
-      {/* Hero */}{" "}
+      {/* Hero */}
       <section className="border-b bg-muted/30">
-        {" "}
         <div className="mx-auto max-w-6xl px-4 py-16 sm:px-6 lg:px-8">
-          {" "}
           <div className="mx-auto max-w-3xl text-center">
-            {" "}
             <p className="mb-3 text-sm font-semibold uppercase tracking-widest text-primary">
-              Deerfield Home Owners Association{" "}
+              {fullHoaName}
             </p>
-            ```
             <h1 className="text-4xl font-bold tracking-tight sm:text-5xl">
               About Deerfield
             </h1>

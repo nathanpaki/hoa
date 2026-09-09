@@ -80,6 +80,8 @@ model Committee {
 model PoolLiaison {
   id        String   @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
   name      String
+  email     String?
+  phone     String?
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
 }
@@ -98,7 +100,7 @@ model Hoa {
   updatedAt DateTime @updatedAt
 }
 
-model MaintenanceCompany {
+model Management {
   id        String   @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
   name      String
   street    String?

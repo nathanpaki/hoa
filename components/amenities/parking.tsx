@@ -1,11 +1,11 @@
-import dogIcon from "@/assets/images/brownicons/dog.png";
+import { SquareParking } from "lucide-react";
 import AmenitySection from "./amenitySection";
 
 export default function Pets() {
   return (
     <AmenitySection
       title="Pets"
-      icon={dogIcon}
+      icon={SquareParking}
       items={[
         <>
           Deerfield is a pet-friendly neighborhood. Dogs and cats are welcome so

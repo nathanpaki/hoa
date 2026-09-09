@@ -406,7 +406,7 @@ export const ModelName = {
   Committee: 'Committee',
   PoolLiaison: 'PoolLiaison',
   Hoa: 'Hoa',
-  MaintenanceCompany: 'MaintenanceCompany',
+  Management: 'Management',
   Testimonial: 'Testimonial',
   Resources: 'Resources'
 } as const
@@ -424,7 +424,7 @@ export type TypeMap<ExtArgs extends runtime.Types.Extensions.InternalArgs = runt
     omit: GlobalOmitOptions
   }
   meta: {
-    modelProps: "fee" | "responsibility" | "amenity" | "meeting" | "boardMember" | "officer" | "committee" | "poolLiaison" | "hoa" | "maintenanceCompany" | "testimonial" | "resources"
+    modelProps: "fee" | "responsibility" | "amenity" | "meeting" | "boardMember" | "officer" | "committee" | "poolLiaison" | "hoa" | "management" | "testimonial" | "resources"
     txIsolationLevel: TransactionIsolationLevel
   }
   model: {
@@ -1094,77 +1094,77 @@ export type TypeMap<ExtArgs extends runtime.Types.Extensions.InternalArgs = runt
         }
       }
     }
-    MaintenanceCompany: {
-      payload: Prisma.$MaintenanceCompanyPayload<ExtArgs>
-      fields: Prisma.MaintenanceCompanyFieldRefs
+    Management: {
+      payload: Prisma.$ManagementPayload<ExtArgs>
+      fields: Prisma.ManagementFieldRefs
       operations: {
         findUnique: {
-          args: Prisma.MaintenanceCompanyFindUniqueArgs<ExtArgs>
-          result: runtime.Types.Utils.PayloadToResult<Prisma.$MaintenanceCompanyPayload> | null
+          args: Prisma.ManagementFindUniqueArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$ManagementPayload> | null
         }
         findUniqueOrThrow: {
-          args: Prisma.MaintenanceCompanyFindUniqueOrThrowArgs<ExtArgs>
-          result: runtime.Types.Utils.PayloadToResult<Prisma.$MaintenanceCompanyPayload>
+          args: Prisma.ManagementFindUniqueOrThrowArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$ManagementPayload>
         }
         findFirst: {
-          args: Prisma.MaintenanceCompanyFindFirstArgs<ExtArgs>
-          result: runtime.Types.Utils.PayloadToResult<Prisma.$MaintenanceCompanyPayload> | null
+          args: Prisma.ManagementFindFirstArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$ManagementPayload> | null
         }
         findFirstOrThrow: {
-          args: Prisma.MaintenanceCompanyFindFirstOrThrowArgs<ExtArgs>
-          result: runtime.Types.Utils.PayloadToResult<Prisma.$MaintenanceCompanyPayload>
+          args: Prisma.ManagementFindFirstOrThrowArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$ManagementPayload>
         }
         findMany: {
-          args: Prisma.MaintenanceCompanyFindManyArgs<ExtArgs>
-          result: runtime.Types.Utils.PayloadToResult<Prisma.$MaintenanceCompanyPayload>[]
+          args: Prisma.ManagementFindManyArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$ManagementPayload>[]
         }
         create: {
-          args: Prisma.MaintenanceCompanyCreateArgs<ExtArgs>
-          result: runtime.Types.Utils.PayloadToResult<Prisma.$MaintenanceCompanyPayload>
+          args: Prisma.ManagementCreateArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$ManagementPayload>
         }
         createMany: {
-          args: Prisma.MaintenanceCompanyCreateManyArgs<ExtArgs>
+          args: Prisma.ManagementCreateManyArgs<ExtArgs>
           result: BatchPayload
         }
         createManyAndReturn: {
-          args: Prisma.MaintenanceCompanyCreateManyAndReturnArgs<ExtArgs>
-          result: runtime.Types.Utils.PayloadToResult<Prisma.$MaintenanceCompanyPayload>[]
+          args: Prisma.ManagementCreateManyAndReturnArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$ManagementPayload>[]
         }
         delete: {
-          args: Prisma.MaintenanceCompanyDeleteArgs<ExtArgs>
-          result: runtime.Types.Utils.PayloadToResult<Prisma.$MaintenanceCompanyPayload>
+          args: Prisma.ManagementDeleteArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$ManagementPayload>
         }
         update: {
-          args: Prisma.MaintenanceCompanyUpdateArgs<ExtArgs>
-          result: runtime.Types.Utils.PayloadToResult<Prisma.$MaintenanceCompanyPayload>
+          args: Prisma.ManagementUpdateArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$ManagementPayload>
         }
         deleteMany: {
-          args: Prisma.MaintenanceCompanyDeleteManyArgs<ExtArgs>
+          args: Prisma.ManagementDeleteManyArgs<ExtArgs>
           result: BatchPayload
         }
         updateMany: {
-          args: Prisma.MaintenanceCompanyUpdateManyArgs<ExtArgs>
+          args: Prisma.ManagementUpdateManyArgs<ExtArgs>
           result: BatchPayload
         }
         updateManyAndReturn: {
-          args: Prisma.MaintenanceCompanyUpdateManyAndReturnArgs<ExtArgs>
-          result: runtime.Types.Utils.PayloadToResult<Prisma.$MaintenanceCompanyPayload>[]
+          args: Prisma.ManagementUpdateManyAndReturnArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$ManagementPayload>[]
         }
         upsert: {
-          args: Prisma.MaintenanceCompanyUpsertArgs<ExtArgs>
-          result: runtime.Types.Utils.PayloadToResult<Prisma.$MaintenanceCompanyPayload>
+          args: Prisma.ManagementUpsertArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$ManagementPayload>
         }
         aggregate: {
-          args: Prisma.MaintenanceCompanyAggregateArgs<ExtArgs>
-          result: runtime.Types.Utils.Optional<Prisma.AggregateMaintenanceCompany>
+          args: Prisma.ManagementAggregateArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.AggregateManagement>
         }
         groupBy: {
-          args: Prisma.MaintenanceCompanyGroupByArgs<ExtArgs>
-          result: runtime.Types.Utils.Optional<Prisma.MaintenanceCompanyGroupByOutputType>[]
+          args: Prisma.ManagementGroupByArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.ManagementGroupByOutputType>[]
         }
         count: {
-          args: Prisma.MaintenanceCompanyCountArgs<ExtArgs>
-          result: runtime.Types.Utils.Optional<Prisma.MaintenanceCompanyCountAggregateOutputType> | number
+          args: Prisma.ManagementCountArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.ManagementCountAggregateOutputType> | number
         }
       }
     }
@@ -1473,7 +1473,7 @@ export const HoaScalarFieldEnum = {
 export type HoaScalarFieldEnum = (typeof HoaScalarFieldEnum)[keyof typeof HoaScalarFieldEnum]
 
 
-export const MaintenanceCompanyScalarFieldEnum = {
+export const ManagementScalarFieldEnum = {
   id: 'id',
   name: 'name',
   street: 'street',
@@ -1486,7 +1486,7 @@ export const MaintenanceCompanyScalarFieldEnum = {
   updatedAt: 'updatedAt'
 } as const
 
-export type MaintenanceCompanyScalarFieldEnum = (typeof MaintenanceCompanyScalarFieldEnum)[keyof typeof MaintenanceCompanyScalarFieldEnum]
+export type ManagementScalarFieldEnum = (typeof ManagementScalarFieldEnum)[keyof typeof ManagementScalarFieldEnum]
 
 
 export const TestimonialScalarFieldEnum = {
@@ -1772,7 +1772,7 @@ export type GlobalOmitConfig = {
   committee?: Prisma.CommitteeOmit
   poolLiaison?: Prisma.PoolLiaisonOmit
   hoa?: Prisma.HoaOmit
-  maintenanceCompany?: Prisma.MaintenanceCompanyOmit
+  management?: Prisma.ManagementOmit
   testimonial?: Prisma.TestimonialOmit
   resources?: Prisma.ResourcesOmit
 }

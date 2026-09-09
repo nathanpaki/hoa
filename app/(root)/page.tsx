@@ -4,7 +4,6 @@ import Hero from "@/components/frontpage/Hero";
 import Meeting from "@/components/frontpage/Meeting";
 import Gallery from "@/components/frontpage/Gallery";
 
-import Faq from "@/components/frontpage/faq";
 import Testimonials from "@/components/frontpage/testimonials";
 
 export default function HomePage() {
@@ -15,7 +14,6 @@ export default function HomePage() {
       <Gallery />
       <Meeting />
       <Testimonials />
-      <Faq />
     </main>
   );
 }

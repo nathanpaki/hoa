@@ -1,7 +1,7 @@
 import { CreditCard, ShieldCheck, Waves } from "lucide-react";
 
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-
+import { fullHoaName } from "@/lib/constants";
 const sections = [
   {
     title: "Maintenance Fees",
@@ -113,7 +113,7 @@ export default function FeesPage() {
         <div className="mx-auto max-w-6xl px-4 py-16 sm:px-6 lg:px-8">
           <div className="mx-auto max-w-3xl text-center">
             <p className="mb-3 text-sm font-semibold uppercase tracking-widest text-primary">
-              Deerfield Home Owners Association
+              {fullHoaName}
             </p>
 
             <h1 className="text-4xl font-bold tracking-tight sm:text-5xl">

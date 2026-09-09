@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { Menu } from "lucide-react";
+import { useState } from "react";
 
 import {
   Sheet,
@@ -15,6 +16,7 @@ const navItems = [
   { label: "Home", href: "/" },
   { label: "About", href: "/about" },
   { label: "Amenities", href: "/amenities" },
+  { label: "Board", href: "/board" },
   { label: "Maintenance", href: "/maintenance" },
   { label: "Covenant & Plat", href: "/plat" },
   { label: "Fees", href: "/fees" },
@@ -22,6 +24,8 @@ const navItems = [
 ];
 
 export default function Navbar() {
+  const [open, setOpen] = useState(false);
+
   return (
     <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-backdrop-filter:bg-background/80">
       <div className="mx-auto flex h-16 max-w-6xl items-center justify-between px-4 sm:px-6 lg:px-8">
@@ -29,6 +33,7 @@ export default function Navbar() {
         <Link
           href="/"
           className="text-lg font-semibold tracking-tight text-foreground"
+          onClick={() => setOpen(false)}
         >
           Deerfield HOA
         </Link>
@@ -47,8 +52,8 @@ export default function Navbar() {
         </nav>
 
         {/* Mobile Navigation */}
-        <div className="md:hidden">
-          <Sheet>
+        <div className="md:hidden ">
+          <Sheet open={open} onOpenChange={setOpen}>
             <SheetTrigger
               type="button"
               aria-label="Open navigation menu"
@@ -62,11 +67,12 @@ export default function Navbar() {
                 <SheetTitle>Deerfield HOA</SheetTitle>
               </SheetHeader>
 
-              <nav className="mt-8 flex flex-col">
+              <nav className="mt-8  ml-4 flex flex-col">
                 {navItems.map((item) => (
                   <Link
                     key={item.href}
                     href={item.href}
+                    onClick={() => setOpen(false)}
                     className="border-b py-4 text-base font-medium transition-colors hover:text-primary"
                   >
                     {item.label}

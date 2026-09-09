@@ -3,6 +3,7 @@ import { FileText, Map, Scale } from "lucide-react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import Image from "next/image";
 import plat from "@/assets/images/condo/plat.png";
+import { fullHoaName } from "@/lib/constants";
 
 export default function CovenantPlatPage() {
   return (
@@ -12,7 +13,7 @@ export default function CovenantPlatPage() {
         <div className="mx-auto max-w-6xl px-4 py-16 sm:px-6 lg:px-8">
           <div className="mx-auto max-w-3xl text-center">
             <p className="mb-3 text-sm font-semibold uppercase tracking-widest text-primary">
-              Deerfield Home Owners Association
+              {fullHoaName}
             </p>
 
             <h1 className="text-4xl font-bold tracking-tight sm:text-5xl">

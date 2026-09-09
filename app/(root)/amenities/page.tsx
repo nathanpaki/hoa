@@ -1,6 +1,7 @@
 import { ParkingCircle, PawPrint, Trees, Waves } from "lucide-react";
 import AmenitySection from "@/components/amenities/amenitySection";
 import { getAmenities } from "@/lib/acttions/getAmenities";
+import { fullHoaName } from "@/lib/constants";
 const amenityIcons = {
   Parking: ParkingCircle,
   Pets: PawPrint,
@@ -16,7 +17,7 @@ export default async function Page() {
         <div className="mx-auto max-w-6xl px-4 py-16 sm:px-6 lg:px-8">
           <div className="mx-auto max-w-3xl text-center">
             <p className="mb-3 text-sm font-semibold uppercase tracking-widest text-primary">
-              Deerfield Home Owners Association
+              {fullHoaName}
             </p>
             <h1 className="text-4xl font-bold tracking-tight sm:text-5xl">
               Deerfield Community Amenities

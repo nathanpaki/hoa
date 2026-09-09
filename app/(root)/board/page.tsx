@@ -2,7 +2,7 @@ import Board from "@/components/boardpage/board";
 import Committees from "@/components/boardpage/committees";
 import Officers from "@/components/boardpage/officers";
 import { getMeeting } from "@/lib/acttions/getMeeting";
-
+import { fullHoaName } from "@/lib/constants";
 export default async function BoardPage() {
   const meeting = await getMeeting();
 
@@ -15,7 +15,7 @@ export default async function BoardPage() {
         <div className="mx-auto max-w-6xl px-4 py-16 sm:px-6 lg:px-8">
           <div className="mx-auto max-w-3xl text-center">
             <p className="mb-3 text-sm font-semibold uppercase tracking-widest text-primary">
-              Deerfield Home Owners Association
+              {fullHoaName}
             </p>
 
             <h1 className="text-4xl font-bold tracking-tight sm:text-5xl">
@@ -39,11 +39,11 @@ export default async function BoardPage() {
                   <span className="font-medium text-foreground">
                     {currentMeeting.weekOfMonth}
                   </span>{" "}
-                  {currentMeeting.dayOfWeek} of every month at{" "}
+                  nd {currentMeeting.dayOfWeek} of every month at{" "}
                   <span className="font-medium text-foreground">
                     {currentMeeting.time}
                   </span>{" "}
-                  at Park {currentMeeting.location}.
+                  at {currentMeeting.location}.
                 </p>
               </div>
             )}
