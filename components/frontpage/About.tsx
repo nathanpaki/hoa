@@ -18,6 +18,7 @@ export default function About() {
               src={entranceImage}
               alt="Deerfield neighborhood"
               fill
+              sizes="(max-width: 768px) 100vw, 50vw"
               className="object-cover ml-2"
             />
           </div>

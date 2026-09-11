@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { Home, MapPin } from "lucide-react";
+import { tagline } from "@/lib/constants";
 
 const footerLinks = [
   { label: "About", href: "/about" },
@@ -28,9 +29,7 @@ export default function Footer() {
                 <h2 className="font-semibold tracking-tight">
                   Deerfield Home Owners Association
                 </h2>
-                <p className="text-sm text-muted-foreground">
-                  Knoxville, Tennessee
-                </p>
+                <p className="text-xs text-muted-foreground"></p>
               </div>
             </div>
             <p className="mt-5 max-w-sm text-sm leading-6 text-muted-foreground">
@@ -78,7 +77,7 @@ export default function Footer() {
               All rights reserved.
             </p>
 
-            <p>Knoxville, Tennessee</p>
+            <p>{tagline}</p>
           </div>
         </div>
       </div>

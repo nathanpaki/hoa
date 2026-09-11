@@ -175,6 +175,8 @@ export type CommitteeScalarFieldEnum = (typeof CommitteeScalarFieldEnum)[keyof t
 export const PoolLiaisonScalarFieldEnum = {
   id: 'id',
   name: 'name',
+  email: 'email',
+  phone: 'phone',
   createdAt: 'createdAt',
   updatedAt: 'updatedAt'
 } as const

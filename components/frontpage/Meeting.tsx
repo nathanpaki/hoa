@@ -2,8 +2,12 @@ import { ArrowRight, CalendarDays } from "lucide-react";
 
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { getMeeting } from "@/lib/acttions/getMeeting";
 
-export default function Meeting() {
+export default async function Meeting() {
+  const meeting = await getMeeting();
+
+  const currentMeeting = meeting[0];
   return (
     <section className="mx-auto max-w-5xl px-4 py-12 sm:px-6 lg:px-8">
       <Card className="overflow-hidden">
@@ -27,8 +31,14 @@ export default function Meeting() {
 
         <CardContent className="p-6 sm:p-8">
           <p className="text-lg font-medium leading-7">
-            Monthly HOA meetings are held on the second Thursday of every month
-            at 5:30 P.M. at Park West Church.
+            Monthly HOA meetings are held on the{" "}
+            <span className="font-medium text-foreground">
+              {currentMeeting.weekOfMonth}
+            </span>{" "}
+            {currentMeeting.dayOfWeek} of every month at{" "}
+            <span className="font-medium text-foreground">
+              {currentMeeting.time} at {currentMeeting.location}.
+            </span>{" "}
           </p>
 
           <p className="mt-4 leading-7 text-muted-foreground">
@@ -43,9 +53,9 @@ export default function Meeting() {
             </p>
             <address className="mt-2 not-italic leading-7 text-muted-foreground">
               <span className="font-medium text-foreground">
-                Park West Church
+                {currentMeeting.location}
               </span>
-              <br /> 7635 Middlebrook Pike <br /> Knoxville, TN 37909
+              <br /> {currentMeeting.address}.
             </address>
           </div>
 

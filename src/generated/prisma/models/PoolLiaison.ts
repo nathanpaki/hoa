@@ -27,6 +27,8 @@ export type AggregatePoolLiaison = {
 export type PoolLiaisonMinAggregateOutputType = {
   id: string | null
   name: string | null
+  email: string | null
+  phone: string | null
   createdAt: Date | null
   updatedAt: Date | null
 }
@@ -34,6 +36,8 @@ export type PoolLiaisonMinAggregateOutputType = {
 export type PoolLiaisonMaxAggregateOutputType = {
   id: string | null
   name: string | null
+  email: string | null
+  phone: string | null
   createdAt: Date | null
   updatedAt: Date | null
 }
@@ -41,6 +45,8 @@ export type PoolLiaisonMaxAggregateOutputType = {
 export type PoolLiaisonCountAggregateOutputType = {
   id: number
   name: number
+  email: number
+  phone: number
   createdAt: number
   updatedAt: number
   _all: number
@@ -50,6 +56,8 @@ export type PoolLiaisonCountAggregateOutputType = {
 export type PoolLiaisonMinAggregateInputType = {
   id?: true
   name?: true
+  email?: true
+  phone?: true
   createdAt?: true
   updatedAt?: true
 }
@@ -57,6 +65,8 @@ export type PoolLiaisonMinAggregateInputType = {
 export type PoolLiaisonMaxAggregateInputType = {
   id?: true
   name?: true
+  email?: true
+  phone?: true
   createdAt?: true
   updatedAt?: true
 }
@@ -64,6 +74,8 @@ export type PoolLiaisonMaxAggregateInputType = {
 export type PoolLiaisonCountAggregateInputType = {
   id?: true
   name?: true
+  email?: true
+  phone?: true
   createdAt?: true
   updatedAt?: true
   _all?: true
@@ -144,6 +156,8 @@ export type PoolLiaisonGroupByArgs<ExtArgs extends runtime.Types.Extensions.Inte
 export type PoolLiaisonGroupByOutputType = {
   id: string
   name: string
+  email: string | null
+  phone: string | null
   createdAt: Date
   updatedAt: Date
   _count: PoolLiaisonCountAggregateOutputType | null
@@ -172,6 +186,8 @@ export type PoolLiaisonWhereInput = {
   NOT?: Prisma.PoolLiaisonWhereInput | Prisma.PoolLiaisonWhereInput[]
   id?: Prisma.UuidFilter<"PoolLiaison"> | string
   name?: Prisma.StringFilter<"PoolLiaison"> | string
+  email?: Prisma.StringNullableFilter<"PoolLiaison"> | string | null
+  phone?: Prisma.StringNullableFilter<"PoolLiaison"> | string | null
   createdAt?: Prisma.DateTimeFilter<"PoolLiaison"> | Date | string
   updatedAt?: Prisma.DateTimeFilter<"PoolLiaison"> | Date | string
 }
@@ -179,6 +195,8 @@ export type PoolLiaisonWhereInput = {
 export type PoolLiaisonOrderByWithRelationInput = {
   id?: Prisma.SortOrder
   name?: Prisma.SortOrder
+  email?: Prisma.SortOrderInput | Prisma.SortOrder
+  phone?: Prisma.SortOrderInput | Prisma.SortOrder
   createdAt?: Prisma.SortOrder
   updatedAt?: Prisma.SortOrder
 }
@@ -189,6 +207,8 @@ export type PoolLiaisonWhereUniqueInput = Prisma.AtLeast<{
   OR?: Prisma.PoolLiaisonWhereInput[]
   NOT?: Prisma.PoolLiaisonWhereInput | Prisma.PoolLiaisonWhereInput[]
   name?: Prisma.StringFilter<"PoolLiaison"> | string
+  email?: Prisma.StringNullableFilter<"PoolLiaison"> | string | null
+  phone?: Prisma.StringNullableFilter<"PoolLiaison"> | string | null
   createdAt?: Prisma.DateTimeFilter<"PoolLiaison"> | Date | string
   updatedAt?: Prisma.DateTimeFilter<"PoolLiaison"> | Date | string
 }, "id">
@@ -196,6 +216,8 @@ export type PoolLiaisonWhereUniqueInput = Prisma.AtLeast<{
 export type PoolLiaisonOrderByWithAggregationInput = {
   id?: Prisma.SortOrder
   name?: Prisma.SortOrder
+  email?: Prisma.SortOrderInput | Prisma.SortOrder
+  phone?: Prisma.SortOrderInput | Prisma.SortOrder
   createdAt?: Prisma.SortOrder
   updatedAt?: Prisma.SortOrder
   _count?: Prisma.PoolLiaisonCountOrderByAggregateInput
@@ -209,6 +231,8 @@ export type PoolLiaisonScalarWhereWithAggregatesInput = {
   NOT?: Prisma.PoolLiaisonScalarWhereWithAggregatesInput | Prisma.PoolLiaisonScalarWhereWithAggregatesInput[]
   id?: Prisma.UuidWithAggregatesFilter<"PoolLiaison"> | string
   name?: Prisma.StringWithAggregatesFilter<"PoolLiaison"> | string
+  email?: Prisma.StringNullableWithAggregatesFilter<"PoolLiaison"> | string | null
+  phone?: Prisma.StringNullableWithAggregatesFilter<"PoolLiaison"> | string | null
   createdAt?: Prisma.DateTimeWithAggregatesFilter<"PoolLiaison"> | Date | string
   updatedAt?: Prisma.DateTimeWithAggregatesFilter<"PoolLiaison"> | Date | string
 }
@@ -216,6 +240,8 @@ export type PoolLiaisonScalarWhereWithAggregatesInput = {
 export type PoolLiaisonCreateInput = {
   id?: string
   name: string
+  email?: string | null
+  phone?: string | null
   createdAt?: Date | string
   updatedAt?: Date | string
 }
@@ -223,6 +249,8 @@ export type PoolLiaisonCreateInput = {
 export type PoolLiaisonUncheckedCreateInput = {
   id?: string
   name: string
+  email?: string | null
+  phone?: string | null
   createdAt?: Date | string
   updatedAt?: Date | string
 }
@@ -230,6 +258,8 @@ export type PoolLiaisonUncheckedCreateInput = {
 export type PoolLiaisonUpdateInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
   name?: Prisma.StringFieldUpdateOperationsInput | string
+  email?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  phone?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
 }
@@ -237,6 +267,8 @@ export type PoolLiaisonUpdateInput = {
 export type PoolLiaisonUncheckedUpdateInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
   name?: Prisma.StringFieldUpdateOperationsInput | string
+  email?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  phone?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
 }
@@ -244,6 +276,8 @@ export type PoolLiaisonUncheckedUpdateInput = {
 export type PoolLiaisonCreateManyInput = {
   id?: string
   name: string
+  email?: string | null
+  phone?: string | null
   createdAt?: Date | string
   updatedAt?: Date | string
 }
@@ -251,6 +285,8 @@ export type PoolLiaisonCreateManyInput = {
 export type PoolLiaisonUpdateManyMutationInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
   name?: Prisma.StringFieldUpdateOperationsInput | string
+  email?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  phone?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
 }
@@ -258,6 +294,8 @@ export type PoolLiaisonUpdateManyMutationInput = {
 export type PoolLiaisonUncheckedUpdateManyInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
   name?: Prisma.StringFieldUpdateOperationsInput | string
+  email?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  phone?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
 }
@@ -265,6 +303,8 @@ export type PoolLiaisonUncheckedUpdateManyInput = {
 export type PoolLiaisonCountOrderByAggregateInput = {
   id?: Prisma.SortOrder
   name?: Prisma.SortOrder
+  email?: Prisma.SortOrder
+  phone?: Prisma.SortOrder
   createdAt?: Prisma.SortOrder
   updatedAt?: Prisma.SortOrder
 }
@@ -272,6 +312,8 @@ export type PoolLiaisonCountOrderByAggregateInput = {
 export type PoolLiaisonMaxOrderByAggregateInput = {
   id?: Prisma.SortOrder
   name?: Prisma.SortOrder
+  email?: Prisma.SortOrder
+  phone?: Prisma.SortOrder
   createdAt?: Prisma.SortOrder
   updatedAt?: Prisma.SortOrder
 }
@@ -279,6 +321,8 @@ export type PoolLiaisonMaxOrderByAggregateInput = {
 export type PoolLiaisonMinOrderByAggregateInput = {
   id?: Prisma.SortOrder
   name?: Prisma.SortOrder
+  email?: Prisma.SortOrder
+  phone?: Prisma.SortOrder
   createdAt?: Prisma.SortOrder
   updatedAt?: Prisma.SortOrder
 }
@@ -288,6 +332,8 @@ export type PoolLiaisonMinOrderByAggregateInput = {
 export type PoolLiaisonSelect<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetSelect<{
   id?: boolean
   name?: boolean
+  email?: boolean
+  phone?: boolean
   createdAt?: boolean
   updatedAt?: boolean
 }, ExtArgs["result"]["poolLiaison"]>
@@ -295,6 +341,8 @@ export type PoolLiaisonSelect<ExtArgs extends runtime.Types.Extensions.InternalA
 export type PoolLiaisonSelectCreateManyAndReturn<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetSelect<{
   id?: boolean
   name?: boolean
+  email?: boolean
+  phone?: boolean
   createdAt?: boolean
   updatedAt?: boolean
 }, ExtArgs["result"]["poolLiaison"]>
@@ -302,6 +350,8 @@ export type PoolLiaisonSelectCreateManyAndReturn<ExtArgs extends runtime.Types.E
 export type PoolLiaisonSelectUpdateManyAndReturn<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetSelect<{
   id?: boolean
   name?: boolean
+  email?: boolean
+  phone?: boolean
   createdAt?: boolean
   updatedAt?: boolean
 }, ExtArgs["result"]["poolLiaison"]>
@@ -309,11 +359,13 @@ export type PoolLiaisonSelectUpdateManyAndReturn<ExtArgs extends runtime.Types.E
 export type PoolLiaisonSelectScalar = {
   id?: boolean
   name?: boolean
+  email?: boolean
+  phone?: boolean
   createdAt?: boolean
   updatedAt?: boolean
 }
 
-export type PoolLiaisonOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<"id" | "name" | "createdAt" | "updatedAt", ExtArgs["result"]["poolLiaison"]>
+export type PoolLiaisonOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<"id" | "name" | "email" | "phone" | "createdAt" | "updatedAt", ExtArgs["result"]["poolLiaison"]>
 
 export type $PoolLiaisonPayload<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   name: "PoolLiaison"
@@ -321,6 +373,8 @@ export type $PoolLiaisonPayload<ExtArgs extends runtime.Types.Extensions.Interna
   scalars: runtime.Types.Extensions.GetPayloadResult<{
     id: string
     name: string
+    email: string | null
+    phone: string | null
     createdAt: Date
     updatedAt: Date
   }, ExtArgs["result"]["poolLiaison"]>
@@ -748,6 +802,8 @@ export interface Prisma__PoolLiaisonClient<T, Null = never, ExtArgs extends runt
 export interface PoolLiaisonFieldRefs {
   readonly id: Prisma.FieldRef<"PoolLiaison", 'String'>
   readonly name: Prisma.FieldRef<"PoolLiaison", 'String'>
+  readonly email: Prisma.FieldRef<"PoolLiaison", 'String'>
+  readonly phone: Prisma.FieldRef<"PoolLiaison", 'String'>
   readonly createdAt: Prisma.FieldRef<"PoolLiaison", 'DateTime'>
   readonly updatedAt: Prisma.FieldRef<"PoolLiaison", 'DateTime'>
 }

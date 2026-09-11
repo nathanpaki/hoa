@@ -39,7 +39,7 @@ model Amenity {
 model Meeting {
   id          String   @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
   dayOfWeek   String
-  weekOfMonth Int?
+  weekOfMonth String?
   time        String
   location    String
   address     String?

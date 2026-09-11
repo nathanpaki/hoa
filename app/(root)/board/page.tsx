@@ -39,12 +39,26 @@ export default async function BoardPage() {
                   <span className="font-medium text-foreground">
                     {currentMeeting.weekOfMonth}
                   </span>{" "}
-                  nd {currentMeeting.dayOfWeek} of every month at{" "}
+                  {currentMeeting.dayOfWeek} of every month at{" "}
                   <span className="font-medium text-foreground">
                     {currentMeeting.time}
                   </span>{" "}
-                  at {currentMeeting.location}.
                 </p>
+
+                <div className="mt-6 rounded-lg border bg-muted/30 p-4">
+                  <p className="text-sm font-semibold uppercase tracking-wide text-primary">
+                    Meeting Location
+                  </p>
+
+                  <address className="mt-2 not-italic leading-7 text-muted-foreground">
+                    <span className="font-medium text-foreground">
+                      {currentMeeting.location}
+                    </span>
+                    <br />
+                    {currentMeeting.address}
+                    <br />
+                  </address>
+                </div>
               </div>
             )}
           </div>

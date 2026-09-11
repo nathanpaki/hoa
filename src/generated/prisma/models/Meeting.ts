@@ -20,24 +20,14 @@ export type MeetingModel = runtime.Types.Result.DefaultSelection<Prisma.$Meeting
 
 export type AggregateMeeting = {
   _count: MeetingCountAggregateOutputType | null
-  _avg: MeetingAvgAggregateOutputType | null
-  _sum: MeetingSumAggregateOutputType | null
   _min: MeetingMinAggregateOutputType | null
   _max: MeetingMaxAggregateOutputType | null
-}
-
-export type MeetingAvgAggregateOutputType = {
-  weekOfMonth: number | null
-}
-
-export type MeetingSumAggregateOutputType = {
-  weekOfMonth: number | null
 }
 
 export type MeetingMinAggregateOutputType = {
   id: string | null
   dayOfWeek: string | null
-  weekOfMonth: number | null
+  weekOfMonth: string | null
   time: string | null
   location: string | null
   address: string | null
@@ -48,7 +38,7 @@ export type MeetingMinAggregateOutputType = {
 export type MeetingMaxAggregateOutputType = {
   id: string | null
   dayOfWeek: string | null
-  weekOfMonth: number | null
+  weekOfMonth: string | null
   time: string | null
   location: string | null
   address: string | null
@@ -68,14 +58,6 @@ export type MeetingCountAggregateOutputType = {
   _all: number
 }
 
-
-export type MeetingAvgAggregateInputType = {
-  weekOfMonth?: true
-}
-
-export type MeetingSumAggregateInputType = {
-  weekOfMonth?: true
-}
 
 export type MeetingMinAggregateInputType = {
   id?: true
@@ -149,18 +131,6 @@ export type MeetingAggregateArgs<ExtArgs extends runtime.Types.Extensions.Intern
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
    * 
-   * Select which fields to average
-  **/
-  _avg?: MeetingAvgAggregateInputType
-  /**
-   * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
-   * 
-   * Select which fields to sum
-  **/
-  _sum?: MeetingSumAggregateInputType
-  /**
-   * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
-   * 
    * Select which fields to find the minimum value
   **/
   _min?: MeetingMinAggregateInputType
@@ -191,8 +161,6 @@ export type MeetingGroupByArgs<ExtArgs extends runtime.Types.Extensions.Internal
   take?: number
   skip?: number
   _count?: MeetingCountAggregateInputType | true
-  _avg?: MeetingAvgAggregateInputType
-  _sum?: MeetingSumAggregateInputType
   _min?: MeetingMinAggregateInputType
   _max?: MeetingMaxAggregateInputType
 }
@@ -200,15 +168,13 @@ export type MeetingGroupByArgs<ExtArgs extends runtime.Types.Extensions.Internal
 export type MeetingGroupByOutputType = {
   id: string
   dayOfWeek: string
-  weekOfMonth: number | null
+  weekOfMonth: string | null
   time: string
   location: string
   address: string | null
   createdAt: Date
   updatedAt: Date
   _count: MeetingCountAggregateOutputType | null
-  _avg: MeetingAvgAggregateOutputType | null
-  _sum: MeetingSumAggregateOutputType | null
   _min: MeetingMinAggregateOutputType | null
   _max: MeetingMaxAggregateOutputType | null
 }
@@ -234,7 +200,7 @@ export type MeetingWhereInput = {
   NOT?: Prisma.MeetingWhereInput | Prisma.MeetingWhereInput[]
   id?: Prisma.UuidFilter<"Meeting"> | string
   dayOfWeek?: Prisma.StringFilter<"Meeting"> | string
-  weekOfMonth?: Prisma.IntNullableFilter<"Meeting"> | number | null
+  weekOfMonth?: Prisma.StringNullableFilter<"Meeting"> | string | null
   time?: Prisma.StringFilter<"Meeting"> | string
   location?: Prisma.StringFilter<"Meeting"> | string
   address?: Prisma.StringNullableFilter<"Meeting"> | string | null
@@ -259,7 +225,7 @@ export type MeetingWhereUniqueInput = Prisma.AtLeast<{
   OR?: Prisma.MeetingWhereInput[]
   NOT?: Prisma.MeetingWhereInput | Prisma.MeetingWhereInput[]
   dayOfWeek?: Prisma.StringFilter<"Meeting"> | string
-  weekOfMonth?: Prisma.IntNullableFilter<"Meeting"> | number | null
+  weekOfMonth?: Prisma.StringNullableFilter<"Meeting"> | string | null
   time?: Prisma.StringFilter<"Meeting"> | string
   location?: Prisma.StringFilter<"Meeting"> | string
   address?: Prisma.StringNullableFilter<"Meeting"> | string | null
@@ -277,10 +243,8 @@ export type MeetingOrderByWithAggregationInput = {
   createdAt?: Prisma.SortOrder
   updatedAt?: Prisma.SortOrder
   _count?: Prisma.MeetingCountOrderByAggregateInput
-  _avg?: Prisma.MeetingAvgOrderByAggregateInput
   _max?: Prisma.MeetingMaxOrderByAggregateInput
   _min?: Prisma.MeetingMinOrderByAggregateInput
-  _sum?: Prisma.MeetingSumOrderByAggregateInput
 }
 
 export type MeetingScalarWhereWithAggregatesInput = {
@@ -289,7 +253,7 @@ export type MeetingScalarWhereWithAggregatesInput = {
   NOT?: Prisma.MeetingScalarWhereWithAggregatesInput | Prisma.MeetingScalarWhereWithAggregatesInput[]
   id?: Prisma.UuidWithAggregatesFilter<"Meeting"> | string
   dayOfWeek?: Prisma.StringWithAggregatesFilter<"Meeting"> | string
-  weekOfMonth?: Prisma.IntNullableWithAggregatesFilter<"Meeting"> | number | null
+  weekOfMonth?: Prisma.StringNullableWithAggregatesFilter<"Meeting"> | string | null
   time?: Prisma.StringWithAggregatesFilter<"Meeting"> | string
   location?: Prisma.StringWithAggregatesFilter<"Meeting"> | string
   address?: Prisma.StringNullableWithAggregatesFilter<"Meeting"> | string | null
@@ -300,7 +264,7 @@ export type MeetingScalarWhereWithAggregatesInput = {
 export type MeetingCreateInput = {
   id?: string
   dayOfWeek: string
-  weekOfMonth?: number | null
+  weekOfMonth?: string | null
   time: string
   location: string
   address?: string | null
@@ -311,7 +275,7 @@ export type MeetingCreateInput = {
 export type MeetingUncheckedCreateInput = {
   id?: string
   dayOfWeek: string
-  weekOfMonth?: number | null
+  weekOfMonth?: string | null
   time: string
   location: string
   address?: string | null
@@ -322,7 +286,7 @@ export type MeetingUncheckedCreateInput = {
 export type MeetingUpdateInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
   dayOfWeek?: Prisma.StringFieldUpdateOperationsInput | string
-  weekOfMonth?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  weekOfMonth?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   time?: Prisma.StringFieldUpdateOperationsInput | string
   location?: Prisma.StringFieldUpdateOperationsInput | string
   address?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
@@ -333,7 +297,7 @@ export type MeetingUpdateInput = {
 export type MeetingUncheckedUpdateInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
   dayOfWeek?: Prisma.StringFieldUpdateOperationsInput | string
-  weekOfMonth?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  weekOfMonth?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   time?: Prisma.StringFieldUpdateOperationsInput | string
   location?: Prisma.StringFieldUpdateOperationsInput | string
   address?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
@@ -344,7 +308,7 @@ export type MeetingUncheckedUpdateInput = {
 export type MeetingCreateManyInput = {
   id?: string
   dayOfWeek: string
-  weekOfMonth?: number | null
+  weekOfMonth?: string | null
   time: string
   location: string
   address?: string | null
@@ -355,7 +319,7 @@ export type MeetingCreateManyInput = {
 export type MeetingUpdateManyMutationInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
   dayOfWeek?: Prisma.StringFieldUpdateOperationsInput | string
-  weekOfMonth?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  weekOfMonth?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   time?: Prisma.StringFieldUpdateOperationsInput | string
   location?: Prisma.StringFieldUpdateOperationsInput | string
   address?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
@@ -366,7 +330,7 @@ export type MeetingUpdateManyMutationInput = {
 export type MeetingUncheckedUpdateManyInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
   dayOfWeek?: Prisma.StringFieldUpdateOperationsInput | string
-  weekOfMonth?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  weekOfMonth?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   time?: Prisma.StringFieldUpdateOperationsInput | string
   location?: Prisma.StringFieldUpdateOperationsInput | string
   address?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
@@ -383,10 +347,6 @@ export type MeetingCountOrderByAggregateInput = {
   address?: Prisma.SortOrder
   createdAt?: Prisma.SortOrder
   updatedAt?: Prisma.SortOrder
-}
-
-export type MeetingAvgOrderByAggregateInput = {
-  weekOfMonth?: Prisma.SortOrder
 }
 
 export type MeetingMaxOrderByAggregateInput = {
@@ -409,18 +369,6 @@ export type MeetingMinOrderByAggregateInput = {
   address?: Prisma.SortOrder
   createdAt?: Prisma.SortOrder
   updatedAt?: Prisma.SortOrder
-}
-
-export type MeetingSumOrderByAggregateInput = {
-  weekOfMonth?: Prisma.SortOrder
-}
-
-export type NullableIntFieldUpdateOperationsInput = {
-  set?: number | null
-  increment?: number
-  decrement?: number
-  multiply?: number
-  divide?: number
 }
 
 
@@ -477,7 +425,7 @@ export type $MeetingPayload<ExtArgs extends runtime.Types.Extensions.InternalArg
   scalars: runtime.Types.Extensions.GetPayloadResult<{
     id: string
     dayOfWeek: string
-    weekOfMonth: number | null
+    weekOfMonth: string | null
     time: string
     location: string
     address: string | null
@@ -908,7 +856,7 @@ export interface Prisma__MeetingClient<T, Null = never, ExtArgs extends runtime.
 export interface MeetingFieldRefs {
   readonly id: Prisma.FieldRef<"Meeting", 'String'>
   readonly dayOfWeek: Prisma.FieldRef<"Meeting", 'String'>
-  readonly weekOfMonth: Prisma.FieldRef<"Meeting", 'Int'>
+  readonly weekOfMonth: Prisma.FieldRef<"Meeting", 'String'>
   readonly time: Prisma.FieldRef<"Meeting", 'String'>
   readonly location: Prisma.FieldRef<"Meeting", 'String'>
   readonly address: Prisma.FieldRef<"Meeting", 'String'>

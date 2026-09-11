@@ -6,12 +6,13 @@ import heroimage from "@/assets/images/condo/rowofhomes2.jpg";
 export default function Hero() {
   return (
     <section className="relative overflow-hidden border-b bg-muted/30">
-      <div className="relative h-[500px] w-full">
+      <div className="relative h-125 w-full">
         <Image
           src={heroimage}
           alt="Deerfield community"
           fill
           priority
+          loading="eager"
           className="object-cover"
         />
 
@@ -21,7 +22,7 @@ export default function Hero() {
           <div className="mx-auto w-full max-w-6xl px-4 sm:px-6 lg:px-8">
             <div className="max-w-3xl text-white">
               <p className="mb-3 text-sm font-semibold uppercase tracking-widest">
-                Deerfield Home Owners Association
+                Deerfield Homeowners Association
               </p>
 
               <h1 className="text-4xl font-bold tracking-tight sm:text-5xl md:text-6xl">
@@ -29,8 +30,7 @@ export default function Hero() {
               </h1>
 
               <p className="mt-5 max-w-2xl text-lg leading-8 text-white/90 sm:text-xl">
-                A well-maintained community of 129 homes located in Knoxville,
-                Tennessee.
+                Together in Harmony, Thriving as One Community.
               </p>
 
               {/* <Button className="mt-6" size="lg">
