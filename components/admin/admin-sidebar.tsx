@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+
 import {
   LayoutDashboard,
   CalendarDays,
@@ -14,7 +15,6 @@ import {
   BookOpen,
   DollarSign,
   MessageSquareQuote,
-  Settings,
 } from "lucide-react";
 
 import {
@@ -28,7 +28,21 @@ import {
   SidebarMenuItem,
 } from "@/components/ui/sidebar";
 
-const navigation = [
+// ---------------------------------------------------------
+// Navigation item type
+// ---------------------------------------------------------
+
+type NavigationItem = {
+  label: string;
+  href: string;
+  icon: React.ElementType;
+};
+
+// ---------------------------------------------------------
+// Navigation
+// ---------------------------------------------------------
+
+const navigation: NavigationItem[] = [
   {
     label: "Dashboard",
     href: "/admin",
@@ -36,7 +50,7 @@ const navigation = [
   },
 ];
 
-const siteInformation = [
+const siteInformation: NavigationItem[] = [
   {
     label: "Meeting",
     href: "/admin/meeting",
@@ -49,7 +63,7 @@ const siteInformation = [
   },
 ];
 
-const people = [
+const people: NavigationItem[] = [
   {
     label: "Board Members",
     href: "/admin/board",
@@ -67,7 +81,7 @@ const people = [
   },
 ];
 
-const property = [
+const property: NavigationItem[] = [
   {
     label: "Amenities",
     href: "/admin/amenities",
@@ -85,7 +99,7 @@ const property = [
   },
 ];
 
-const resources = [
+const resources: NavigationItem[] = [
   {
     label: "Resources",
     href: "/admin/resources",
@@ -103,12 +117,16 @@ const resources = [
   },
 ];
 
+// ---------------------------------------------------------
+// Navigation Section
+// ---------------------------------------------------------
+
 function NavSection({
   label,
   items,
 }: {
   label: string;
-  items: typeof siteInformation;
+  items: NavigationItem[];
 }) {
   const pathname = usePathname();
 
@@ -128,11 +146,12 @@ function NavSection({
 
             return (
               <SidebarMenuItem key={item.href}>
-                <SidebarMenuButton asChild isActive={active}>
-                  <Link href={item.href}>
-                    <Icon />
-                    <span>{item.label}</span>
-                  </Link>
+                <SidebarMenuButton
+                  render={<Link href={item.href} />}
+                  isActive={active}
+                >
+                  <Icon />
+                  <span>{item.label}</span>
                 </SidebarMenuButton>
               </SidebarMenuItem>
             );
@@ -143,10 +162,17 @@ function NavSection({
   );
 }
 
+// ---------------------------------------------------------
+// Admin Sidebar
+// ---------------------------------------------------------
+
 export default function AdminSidebar() {
+  const pathname = usePathname();
+
   return (
     <Sidebar>
       <SidebarContent>
+        {/* Main Navigation */}
         <SidebarGroup>
           <SidebarGroupLabel>Deerfield HOA</SidebarGroupLabel>
 
@@ -155,13 +181,19 @@ export default function AdminSidebar() {
               {navigation.map((item) => {
                 const Icon = item.icon;
 
+                const active =
+                  item.href === "/admin"
+                    ? pathname === "/admin"
+                    : pathname.startsWith(item.href);
+
                 return (
                   <SidebarMenuItem key={item.href}>
-                    <SidebarMenuButton asChild>
-                      <Link href={item.href}>
-                        <Icon />
-                        <span>{item.label}</span>
-                      </Link>
+                    <SidebarMenuButton
+                      render={<Link href={item.href} />}
+                      isActive={active}
+                    >
+                      <Icon />
+                      <span>{item.label}</span>
                     </SidebarMenuButton>
                   </SidebarMenuItem>
                 );
@@ -170,12 +202,16 @@ export default function AdminSidebar() {
           </SidebarGroupContent>
         </SidebarGroup>
 
+        {/* Site Information */}
         <NavSection label="Site Information" items={siteInformation} />
 
+        {/* People */}
         <NavSection label="People" items={people} />
 
+        {/* Property */}
         <NavSection label="Property" items={property} />
 
+        {/* Resources */}
         <NavSection label="Resources" items={resources} />
       </SidebarContent>
     </Sidebar>
