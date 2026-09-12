@@ -2,6 +2,7 @@ import Image from "next/image";
 import { ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import heroimage from "@/assets/images/condo/rowofhomes2.jpg";
+import { fullHoaName } from "@/lib/constants";
 
 export default function Hero() {
   return (
@@ -22,7 +23,7 @@ export default function Hero() {
           <div className="mx-auto w-full max-w-6xl px-4 sm:px-6 lg:px-8">
             <div className="max-w-3xl text-white">
               <p className="mb-3 text-sm font-semibold uppercase tracking-widest">
-                Deerfield Homeowners Association
+                {fullHoaName}
               </p>
 
               <h1 className="text-4xl font-bold tracking-tight sm:text-5xl md:text-6xl">
