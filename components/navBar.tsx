@@ -17,9 +17,10 @@ const navItems = [
   { label: "About", href: "/about" },
   { label: "Amenities", href: "/amenities" },
   { label: "Board", href: "/board" },
+  { label: "Fees", href: "/fees" },
   { label: "Maintenance", href: "/maintenance" },
   { label: "Covenant & Plat", href: "/plat" },
-  { label: "Fees", href: "/fees" },
+  { label: "Resources", href: "/resources" },
   { label: "Contact", href: "/contact" },
 ];
 
