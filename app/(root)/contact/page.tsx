@@ -296,7 +296,7 @@ export default function ContactPage() {
                   </Link>
 
                   <Link
-                    href="/covenant-plat"
+                    href="/plat"
                     className="inline-flex h-9 w-full items-center justify-start rounded-md border bg-background px-4 py-2 text-sm font-medium shadow-xs transition-colors hover:bg-accent hover:text-accent-foreground"
                   >
                     Covenants & By-Laws

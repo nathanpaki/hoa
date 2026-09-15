@@ -27,8 +27,6 @@ import {
 
 const condoImages = [
   { src: entrance, alt: "Deerfield entrance" },
-  { src: greenery, alt: "Deerfield landscaping" },
-  { src: greenery2, alt: "Deerfield landscaping" },
   { src: homes3, alt: "Deerfield homes" },
   { src: homes4, alt: "Deerfield homes" },
   { src: homes5, alt: "Deerfield homes" },
@@ -40,6 +38,8 @@ const condoImages = [
   { src: pool3, alt: "Deerfield swimming pool" },
   { src: rowOfHomes, alt: "Deerfield homes" },
   { src: rowOfHomes2, alt: "Deerfield homes" },
+  { src: greenery, alt: "Deerfield landscaping" },
+  { src: greenery2, alt: "Deerfield landscaping" },
 ];
 
 export default function CommunityGallery() {
