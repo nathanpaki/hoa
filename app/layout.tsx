@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono, Instrument_Serif, Inter } from "next/font/google";
 import "@/assets/styles/globals.css";
 import { cn } from "@/lib/utils";
+import { Analytics } from '@vercel/analytics/next';
 
 const inter = Geist({ subsets: ["latin"], variable: "--font-sans" });
 
@@ -42,6 +43,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
         className={`${geist.variable} ${instrumentSerif.variable} antialiased`}
       >
         {children}
+        <Analytics />
       </body>
     </html>
   );
