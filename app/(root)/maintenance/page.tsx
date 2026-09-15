@@ -166,7 +166,7 @@ export default function MaintenancePage() {
               </div>
 
               <Button variant="outline">
-                <a href="/documents/materials-appendix.pdf" target="_blank">
+                <a href="/docs/materialsappendix.pdf" target="_blank">
                   View
                 </a>
               </Button>
@@ -187,7 +187,7 @@ export default function MaintenancePage() {
               </div>
 
               <Button variant="outline">
-                <a href="/documents/paint-colors.pdf" target="_blank">
+                <a href="/docs/paintcolors.pdf" target="_blank">
                   View
                 </a>
               </Button>

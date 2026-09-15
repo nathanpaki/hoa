@@ -60,7 +60,7 @@ export default function CovenantPlatPage() {
                 </p>
 
                 <a
-                  href="/documents/covenant.pdf"
+                  href="/docs/covenant.pdf"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-flex items-center gap-2 rounded-md bg-primary px-4 py-2.5 text-sm font-medium text-primary-foreground transition-colors hover:bg-primary/90"
@@ -92,7 +92,7 @@ export default function CovenantPlatPage() {
                 </p>
 
                 <a
-                  href="/documents/covenant-amendment.pdf"
+                  href="/docs/amendments.pdf"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-flex items-center gap-2 rounded-md bg-primary px-4 py-2.5 text-sm font-medium text-primary-foreground transition-colors hover:bg-primary/90"
