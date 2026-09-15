@@ -11,28 +11,21 @@ export default async function Resources() {
   const resources = await getResources();
   return (
     <section className="bg-muted/30">
-      {" "}
       <div className="mx-auto max-w-6xl px-4 py-14 sm:px-6 lg:px-8">
-        {" "}
         {/* Section Header */}{" "}
-        <div className="mx-auto mb-10 max-w-3xl text-center">
-          {" "}
+        {/* <div className="mx-auto mb-10 max-w-3xl text-center">
           <p className="text-sm font-semibold uppercase tracking-widest text-primary">
-            {" "}
             Deerfield Information{" "}
-          </p>{" "}
+          </p>
           <h2 className="mt-2 text-3xl font-bold tracking-tight sm:text-4xl">
-            {" "}
             Community Resources{" "}
-          </h2>{" "}
+          </h2>
           <p className="mt-4 text-muted-foreground">
-            {" "}
-            Helpful information and services for Deerfield residents.{" "}
-          </p>{" "}
-        </div>{" "}
-        {/* Resource Cards */}{" "}
+            Helpful information and services for Deerfield residents.
+          </p>
+        </div> */}
+        {/* Resource Cards */}
         <div className="grid gap-5 md:grid-cols-2">
-          {" "}
           {resources.map((resource) => {
             const Icon =
               resource.image &&
@@ -42,48 +35,35 @@ export default async function Resources() {
                 key={resource.id}
                 className="h-full transition-shadow hover:shadow-md"
               >
-                {" "}
                 <CardHeader>
-                  {" "}
                   <div className="flex items-center gap-4">
-                    {" "}
                     {/* Lucide Icon */}{" "}
                     {Icon && (
                       <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-lg bg-primary">
-                        {" "}
                         <Icon className="h-6 w-6 text-primary-foreground" />{" "}
                       </div>
-                    )}{" "}
-                    <CardTitle className="text-xl">
-                      {" "}
-                      {resource.name}{" "}
-                    </CardTitle>{" "}
-                  </div>{" "}
-                </CardHeader>{" "}
+                    )}
+                    <CardTitle className="text-xl">{resource.name}</CardTitle>
+                  </div>
+                </CardHeader>
                 <CardContent>
-                  {" "}
                   <ul className="space-y-3">
-                    {" "}
                     {resource.lists.map((list, index) => (
                       <li
                         key={`${resource.id}-${index}`}
                         className="flex items-start gap-3 leading-7 text-muted-foreground"
                       >
-                        {" "}
-                        <span className="mt-3 h-1.5 w-1.5 shrink-0 rounded-full bg-primary" />{" "}
-                        <span className="min-w-0 wrap-break-word">
-                          {" "}
-                          {list}{" "}
-                        </span>{" "}
+                        <span className="mt-3 h-1.5 w-1.5 shrink-0 rounded-full bg-primary" />
+                        <span className="min-w-0 wrap-break-word">{list}</span>
                       </li>
-                    ))}{" "}
-                  </ul>{" "}
-                </CardContent>{" "}
+                    ))}
+                  </ul>
+                </CardContent>
               </Card>
             );
-          })}{" "}
-        </div>{" "}
-      </div>{" "}
+          })}
+        </div>
+      </div>
     </section>
   );
 }
