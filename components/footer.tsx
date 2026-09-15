@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { Home, MapPin } from "lucide-react";
-import { tagline } from "@/lib/constants";
+import { tagline, fullHoaName } from "@/lib/constants";
 
 const footerLinks = [
   { label: "About", href: "/about" },
@@ -26,9 +26,7 @@ export default function Footer() {
               </div>
 
               <div>
-                <h2 className="font-semibold tracking-tight">
-                  Deerfield Home Owners Association
-                </h2>
+                <h2 className="font-semibold tracking-tight">{fullHoaName}</h2>
                 <p className="text-xs text-muted-foreground"></p>
               </div>
             </div>
