@@ -2,7 +2,7 @@ import { ArrowRight, CalendarDays } from "lucide-react";
 
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { getMeeting } from "@/lib/acttions/getMeeting";
+import { getMeeting } from "@/lib/actions/getMeeting";
 
 export default async function Meeting() {
   const meeting = await getMeeting();

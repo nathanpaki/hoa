@@ -1,4 +1,4 @@
-import { getBoardMembers } from "@/lib/acttions/getBoardMembers";
+import { getBoardMembers } from "@/lib/actions/getBoardMembers";
 import { Users } from "lucide-react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 

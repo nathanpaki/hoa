@@ -1,6 +1,6 @@
 import AdminPageHeader from "@/components/admin/admin-page-header";
 import BoardMembersForm from "@/components/admin/board-members-form";
-import { getBoardMembers } from "@/lib/acttions/getBoardMembers";
+import { getBoardMembers } from "@/lib/actions/getBoardMembers";
 
 export default async function BoardMembersPage() {
   const members = await getBoardMembers();

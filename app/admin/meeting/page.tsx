@@ -1,6 +1,6 @@
 import AdminPageHeader from "@/components/admin/admin-page-header";
 import MeetingForm from "@/components/admin/meeting-form";
-import { getMeeting } from "@/lib/acttions/dashboard/meeting";
+import { getMeeting } from "@/lib/actions/dashboard/meeting";
 
 export default async function MeetingPage() {
   const meeting = await getMeeting();

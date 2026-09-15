@@ -13,7 +13,7 @@ import {
 } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
-import { updateMeeting } from "@/lib/acttions/dashboard/meeting";
+import { updateMeeting } from "@/lib/actions/dashboard/meeting";
 
 type Meeting = {
   id: string;

@@ -1,4 +1,4 @@
-import { getCommittees } from "@/lib/acttions/getCommittees";
+import { getCommittees } from "@/lib/actions/getCommittees";
 import { Building2, Waves, HandHeart, Trees, Home } from "lucide-react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 const committeeIcons = {

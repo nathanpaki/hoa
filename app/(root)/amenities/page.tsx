@@ -1,6 +1,6 @@
 import { ParkingCircle, PawPrint, Trees, Waves } from "lucide-react";
 import AmenitySection from "@/components/amenities/amenitySection";
-import { getAmenities } from "@/lib/acttions/getAmenities";
+import { getAmenities } from "@/lib/actions/getAmenities";
 import { fullHoaName } from "@/lib/constants";
 const amenityIcons = {
   Parking: ParkingCircle,

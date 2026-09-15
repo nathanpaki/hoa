@@ -1,5 +1,5 @@
 import { School, Satellite, Trash2, UtilityPole } from "lucide-react";
-import { getResources } from "@/lib/acttions/getResources";
+import { getResources } from "@/lib/actions/getResources";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 const resourceIcons = {
   school: School,

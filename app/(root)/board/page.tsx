@@ -1,7 +1,7 @@
 import Board from "@/components/boardpage/board";
 import Committees from "@/components/boardpage/committees";
 import Officers from "@/components/boardpage/officers";
-import { getMeeting } from "@/lib/acttions/getMeeting";
+import { getMeeting } from "@/lib/actions/getMeeting";
 import { fullHoaName } from "@/lib/constants";
 export default async function BoardPage() {
   const meeting = await getMeeting();

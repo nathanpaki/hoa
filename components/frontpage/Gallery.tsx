@@ -4,7 +4,7 @@ import Image from "next/image";
 
 import entrance from "@/assets/images/condo/entrance.png";
 import greenery from "@/assets/images/condo/greenery.png";
-import greenery2 from "@/assets/images/condo/greenery.png";
+import greenery2 from "@/assets/images/condo/greenery2.jpg";
 import homes3 from "@/assets/images/condo/homes3.jpg";
 import homes4 from "@/assets/images/condo/homes4.jpg";
 import homes5 from "@/assets/images/condo/homes5.jpg";

@@ -1,4 +1,4 @@
-import { getOfficers } from "@/lib/acttions/getOfficers";
+import { getOfficers } from "@/lib/actions/getOfficers";
 import { BriefcaseBusiness } from "lucide-react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 

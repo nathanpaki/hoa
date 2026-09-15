@@ -7,7 +7,7 @@ import {
   createBoardMember,
   deleteBoardMember,
   updateBoardMember,
-} from "@/lib/acttions/dashboard/board-member";
+} from "@/lib/actions/dashboard/board-member";
 
 import { Button } from "@/components/ui/button";
 import {
