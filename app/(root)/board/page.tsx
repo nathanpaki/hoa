@@ -35,7 +35,7 @@ export default async function BoardPage() {
                 </p>
 
                 <p className="mt-2 text-base leading-7 text-muted-foreground">
-                  The Board meets the{" "}
+                  The Board meets on the{" "}
                   <span className="font-medium text-foreground">
                     {currentMeeting.weekOfMonth}
                   </span>{" "}
